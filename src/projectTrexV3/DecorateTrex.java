@@ -23,17 +23,25 @@ public class DecorateTrex extends DecoratorGeneralJFrame implements IMainCharact
 	private TrexState play;
 	private TrexState die;
 	private TrexState currentState;
-
-	public DecorateTrex(GeneraJFrame generalJFrame) {
+	private Enemy enemy;
+	public DecorateTrex(GeneraJFrame generalJFrame,Enemy enemy) {
 		super(generalJFrame);
 		this.generalJFrame = generalJFrame;
 		gravity = 0.4;
 		bound = new Rectangle();
-
+		enemy.setCollisionObject(this);
 		start = new StartState(this);
 		play = new PlayState(this);
 		die = new DieState(this);
 		currentState = start;
+	}
+	
+	public final Enemy getEnemy() {
+		return enemy;
+	}
+
+	public final void setEnemy(Enemy enemy) {
+		this.enemy = enemy;
 	}
 
 	@Override

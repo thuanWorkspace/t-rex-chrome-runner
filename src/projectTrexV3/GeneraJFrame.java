@@ -34,7 +34,7 @@ public abstract class GeneraJFrame extends JPanel implements KeyListener {
 				setWidthAndHeight(getWidth(), getHeight());
 			}
 		};
-		timer.schedule(task, 0, 1);
+		timer.schedule(task, 0, 16);
 	}
 
 	@Override
